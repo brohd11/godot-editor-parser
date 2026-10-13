@@ -3,8 +3,14 @@ extends Singletons.Base
 
 const CacheHelper = preload("uid://c70cjcnys60ud") #! resolve UtilR.Files.CacheHelper
 
+# Core components, exposed so consumers can reach them as EditorParser.TagParser.X.
+const Scanner = preload("res://addons/_lib/editor_parser/src/tag/scanner.gd")
+const Options = preload("res://addons/_lib/editor_parser/src/tag/options.gd")
+const Registry = preload("res://addons/_lib/editor_parser/src/tag/registry.gd")
+const Metadata = preload("res://addons/_lib/editor_parser/src/tag/metadata.gd")
+
 # Use 'PE_STRIP_CAST_SCRIPT' to auto strip type casts with plugin exporter, if the class is not a global name
-const PE_STRIP_CAST_SCRIPT = preload("res://addons/_lib/editor_parser/src/tag_parser/tag_parser.gd")
+const PE_STRIP_CAST_SCRIPT = preload("res://addons/_lib/editor_parser/src/tag/tag_parser.gd")
 static func get_singleton_name() -> String:
 	return "EditorTagParser"
 
@@ -44,9 +50,6 @@ var parsers:Dictionary[StringName, Object] = {}
 var _cache:Dictionary = {}
 var _sources:Dictionary = {}
 var _registry = Registry.new()
-
-const Registry = preload("res://addons/_lib/editor_parser/src/tag_parser/registry.gd")
-const Metadata = preload("res://addons/_lib/editor_parser/src/tag_parser/metadata.gd")
 
 
 func _init(_node:Node = null) -> void:

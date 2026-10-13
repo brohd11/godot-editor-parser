@@ -14,7 +14,7 @@ extends RefCounted
 ## Runs on parsers isolated from the editor's live cache; the shared artifact is the on-disk dir.
 ## Non-blocking: drains WARMUP_PER_FRAME scripts per frame, awaiting a process_frame between batches.
 
-const GetFiles = preload("uid://b3p6nfmpcltt0") #! resolve ALibRuntime.Utils.UFile.GetFiles
+const GetFiles = preload("uid://2kt1rv8kqr3u") #! resolve UtilR.Files.GetFiles
 const WARMUP_PER_FRAME := 3 # scripts resolved per frame before yielding (parse is heavy; keep small)
 
 var running := false

@@ -1,7 +1,7 @@
 extends RefCounted
 ## Legacy handlers receive merged modifiers/arguments; raw occurrence queries stay lossless.
 
-const Registry = preload("res://addons/_lib/editor_parser/src/tag_parser/registry.gd")
+const Registry = preload("res://addons/_lib/editor_parser/src/tag/registry.gd")
 
 
 static func build(entries:Array, handlers:Dictionary) -> Dictionary:

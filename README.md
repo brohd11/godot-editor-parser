@@ -2,9 +2,9 @@
 
 Editor-side GDScript parsing services, under the `EditorParser` namespace:
 
-- `EditorParser.EditorGDScriptParser` (`src/editor_gdscript_parser.gd`): singleton that keeps a
+- `EditorParser.EditorGDScriptParser` (`src/gdscript/editor_gdscript_parser.gd`): singleton that keeps a
   `GDScriptParser` synced with the active script editor buffer.
-- `EditorParser.TagParser` (`src/tag_parser/tag_parser.gd`): `#!` tag metadata service.
+- `EditorParser.TagParser` (`src/tag/tag_parser.gd`): `#!` tag metadata service.
 
 Both are lazily instanced singletons, so using one never instantiates the other.
 
@@ -13,7 +13,7 @@ Both are lazily instanced singletons, so using one never instantiates the other.
 Register from an EditorPlugin (`register_node(self)` / `unregister_node(self)`), then use
 `EditorGDScriptParser.get_parser(path = "")` for the active (or a cached) parser. It reparses on
 script validation and emits `editor_script_changed` / `parse_completed`. `warmup_project()` /
-`warmup_project_full()` fill the persistent parse cache (`src/warmup.gd`).
+`warmup_project_full()` fill the persistent parse cache (`src/gdscript/warmup.gd`).
 
 # Tag Parser
 
@@ -24,7 +24,7 @@ dependencies, so export-time tools (gdscript_optimizer, plugin_exporter) use the
 ## Core API
 
 ```gdscript
-const Registry = preload("res://addons/_lib/editor_parser/src/tag_parser/registry.gd")
+const Registry = preload("res://addons/_lib/editor_parser/src/tag/registry.gd")
 
 var registry = Registry.new()
 registry.scan_files(["res://example.gd"])
@@ -78,7 +78,7 @@ Exact expression selection and inlining belong to consumers.
 
 ## Editor service and compatibility
 
-The optional service is `src/tag_parser/tag_parser.gd` (`EditorParser.TagParser`). It
+The optional service is `src/tag/tag_parser.gd` (`EditorParser.TagParser`). It
 keeps the `EditorTagParser` singleton name and uses util_r's CacheHelper, GDScriptParser
 interfaces, and script-editor utilities. It follows the Singletons lifecycle and needs no
 EditorPlugin registration. The optimizer's `tag_registry.gd` remains a compatibility entry point.

@@ -2,7 +2,7 @@ extends RefCounted
 ## Keeps every tag occurrence; attachment is separate from discovering its source location.
 ## Ranges use zero-based character columns with an exclusive end, matching CodeEdit.
 
-const Options = preload("res://addons/_lib/editor_parser/src/tag_parser/options.gd")
+const Options = preload("res://addons/_lib/editor_parser/src/tag/options.gd")
 
 const MEMBER_DELIM = ":" + ":"
 const ATTACH_MEMBER = &"member"

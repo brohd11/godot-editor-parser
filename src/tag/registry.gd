@@ -1,4 +1,4 @@
-extends "res://addons/_lib/editor_parser/src/tag_parser/scanner.gd"
+extends "res://addons/_lib/editor_parser/src/tag/scanner.gd"
 ## File reads are snapshots. Replace buffers or invalidate paths explicitly after edits.
 
 var _files:Dictionary = {}
