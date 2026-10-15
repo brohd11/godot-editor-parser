@@ -19,7 +19,7 @@ script validation and emits `editor_script_changed` / `parse_completed`. `warmup
 
 Shared GDScript `#!` tag discovery and indexing, plus an optional editor service.
 The scanner and registry never preload the editor service, and have no editor
-dependencies, so export-time tools (gdscript_optimizer, plugin_exporter) use them directly.
+dependencies, so export-time tools (gdscript_optimizer, package_exporter) use them directly.
 
 ## Core API
 
