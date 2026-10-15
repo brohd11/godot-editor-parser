@@ -100,8 +100,8 @@ metadata; filesystem changes and `clear_cache()` invalidate all cached layers.
 From the development project:
 
 ```sh
-godot --headless --path . --script res://tests/editor_parser/run_headless.gd
-python3 tests/editor_parser/core_smoke.py --godot /path/to/Godot
+godot --headless --path . --script res://addons/_lib/editor_parser/_export_ignore/test/run_headless.gd
+python3 addons/_lib/editor_parser/_export_ignore/test/core_smoke.py --godot /path/to/Godot
 ```
 
 The smoke test installs only the core and metadata adapter in a disposable
