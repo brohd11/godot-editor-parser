@@ -1,4 +1,4 @@
-# Tests this package with PackageExporter: its suites, as pushed, against its requires at their
+# Tests this package with gdpackage: its suites, as pushed, against its requires at their
 # tags - so a pass means the declared requires are enough. Add Godot builds to test on more.
 name: test
 on:
@@ -8,6 +8,6 @@ on:
   workflow_dispatch:
 jobs:
   test:
-    uses: brohd11/godot-package-exporter/.github/workflows/package-test.yml@main
+    uses: brohd11/godot-gdpackage/.github/workflows/package-test.yml@main
     with:
       godot-versions: '["4.7-stable"]'
