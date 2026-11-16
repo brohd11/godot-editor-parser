@@ -9,7 +9,7 @@ const Options = preload("res://addons/_lib/editor_parser/src/tag/options.gd")
 const Registry = preload("res://addons/_lib/editor_parser/src/tag/registry.gd")
 const Metadata = preload("res://addons/_lib/editor_parser/src/tag/metadata.gd")
 
-# Use 'PE_STRIP_CAST_SCRIPT' to auto strip type casts with plugin exporter, if the class is not a global name
+#! gdp-strip-cast PE_STRIP_CAST_SCRIPT
 const PE_STRIP_CAST_SCRIPT = preload("res://addons/_lib/editor_parser/src/tag/tag_parser.gd")
 static func get_singleton_name() -> String:
 	return "EditorTagParser"

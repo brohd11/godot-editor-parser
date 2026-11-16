@@ -1,5 +1,5 @@
 #! namespace EditorParser.Other class VarInsertType
-#! strip-cast GDScriptParser
+#! gdp-strip-cast GDScriptParser
 
 const TagParser = preload("uid://mjs2johce5hs") #! resolve EditorParser.TagParser
 const EditorGDScriptParser = preload("uid://t2dewmuth0sy") #! resolve EditorParser.EditorGDScriptParser

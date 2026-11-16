@@ -1,11 +1,11 @@
 #! namespace EditorParser class EditorGDScriptParser
 extends Singletons.RefCount
 
-#! strip-cast GDScriptParser
+#! gdp-strip-cast GDScriptParser
 
 const ParserWarmup = preload("res://addons/_lib/editor_parser/src/gdscript/warmup.gd")
 
-# Use 'PE_STRIP_CAST_SCRIPT' to auto strip type casts with plugin exporter, if the class is not a global name
+#! gdp-strip-cast PE_STRIP_CAST_SCRIPT
 const PE_STRIP_CAST_SCRIPT = preload("res://addons/_lib/editor_parser/src/gdscript/editor_gdscript_parser.gd")
 
 static func get_singleton_name() -> String:
